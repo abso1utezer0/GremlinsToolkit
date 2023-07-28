@@ -63,6 +63,13 @@ class FileManipulator:
         # read bytes
         return self.file.read(length)
     
+    def r_bytes(self):
+        # read bytes
+        return self.file.read()
+    
+    def read(self):
+        return self.file.read()
+    
     # writing shortcuts
     def w_int(self, value, length):
         # pack integer as bytes
@@ -99,8 +106,15 @@ class FileManipulator:
         # write null byte
         self.file.write(b"\x00")
 
+    def w_byte(self, value):
+        # write byte
+        self.file.write(value)
+
     def w_bytes(self, value):
         # write bytes
+        self.file.write(value)
+    
+    def write(self, value):
         self.file.write(value)
 
     # other
